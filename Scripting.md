@@ -24,7 +24,7 @@ You are presented with a 16 x 16 letter grid, and a given word. In order to pass
 
 Unleashing our inner *SWE*, we wrote this script out:
 ![](https://i.imgur.com/zaT4qJ8.png)
-The solution runs in worst case *O(n^3)* time complexity surpringly. It traverses the entire grid, finds the first letter of the word, and checks all 8 directions of grid if the word can be found. 
+The solution runs in worst case *O(n^3)* time complexity surprisingly. It traverses the entire grid, finds the first letter of the word, and checks all 8 directions of grid if the word can be found. 
 
 Not my proudest leetcode solution (can definitely improve time and mem complexity), but Hey, it got the job done. 
 
