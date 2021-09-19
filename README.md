@@ -1,7 +1,7 @@
 # HacktivityCon-2021-CTF
 Writeups for HacktivityCon-2021-CTF
 
-## Categories of Challegnes Solved:
+## Categories of Challenges Solved:
 - Warmup
 - Web
 - Pwn
