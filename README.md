@@ -7,3 +7,4 @@ Writeups for HacktivityCon-2021-CTF
 - Pwn
 - OSINT
 - Scripting
+- Misc
