@@ -2,7 +2,8 @@
 ## Retcheck
 ### Problem Type: Buffer Overflow
 
-We obtain the binary `./retcheck`. We decompile it in ghidra and take a look at the `main` function. 
+We obtain the binary `./retcheck`. Running `checksec`, we note that there is no PIE, ASLR, or stack canaries. 
+We decompile it in ghidra and take a look at the `main` function. 
 
 `main()` calls another function `vuln()` and returns 0. We then look at `vuln()`
 
@@ -10,7 +11,7 @@ We obtain the binary `./retcheck`. We decompile it in ghidra and take a look at 
 
 `vuln()` initialises two notable variables: 
 - A 400 byte buffer: `local_198`
-- A long variable ('stack canary') to store the return address
+- A long variable (a mock 'stack canary') to store the return address
 
 The program does two notable things:
 - `gets` an input
@@ -20,7 +21,7 @@ The program uses `gets` which is vulnerable to buffer overflow. In typical buffe
 > "A" * 400 + `padding` + `return_address to win()`
 
 
-However, the presence of the stack canary does not allow us to do just that. 
+However, the presence of the 'mock' stack canary does not allow us to do just that. 
 
 We note that the stack canary is initialised right above the buffer, which we can also overflow. We use GDB to find the original return address, and ensure that the stack canary value is equal to the original return address - to ensure the program does not abort. Our payload is now:
 
