@@ -43,5 +43,22 @@ Upon logging in through the admin login page, we obtain the flag.
 
 ![](https://i.imgur.com/mFNLfml.png)
 
+## Swaggy
+### Problem Type: Authentication Bypass (?)
+The webpage was mock *swagger API documentation*
+![](https://i.imgur.com/MV2ljYk.png)
+
+The API GET endpoint prints out the flag. However, in order to execute this GET call, we require admin authentication. 
+
+There's a button at the top of the webpage to authenticate, and we try the usual username and password combinations. Turns out - `admin/admin` gives us admin access. Not sure if this is the intended solution. 
+
+![](https://i.imgur.com/VLEJSQJ.png)
+
+We then get the flag for this challenge. 
+
+###### tags: `H@cktivityCon 2021 CTF`, `web`
+
+
+
 
 
